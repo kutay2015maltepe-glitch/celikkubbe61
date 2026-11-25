@@ -90,26 +90,30 @@ Konsol log çıktısı ve OpenCV GUI penceresi üzerinde bounding box (sınırla
 - Ortalama İşlem Süresi: 61 ms / kare (Tüm konfigürasyonlar için ortalama)
 - Referans: Manuel etiketleme (Ground Truth)
 
---------------------------------------------------------------------------------
-1. STANDART IŞIK KOŞULLARI TABLOSU
---------------------------------------------------------------------------------
-| Mod / Konfigürasyon         | TP | FP | FN | TN | Doğruluk | Kesinlik | Duyarlılık |
-|-----------------------------|----|----|----|----|----------|----------|------------|
-| RGB + Filtresiz             | 7  | 1  | 1  | 1  | %80.0    | %87.5    | %87.5      |
-| RGB + Filtreli              | 7  | 0  | 2  | 1  | %80.0    | %100.0   | %77.8      |
-| HSV + Filtresiz             | 7  | 1  | 0  | 2  | %90.0    | %87.5    | %100.0     |
-| HSV + Filtreli (Asıl Sistem)| 10 | 0  | 0  | 0  | %100.0   | %100.0   | %100.0     |
+## Test ve Ölçüm Sonuçları (Standart Işık)
 
---------------------------------------------------------------------------------
-2. DÜŞÜK IŞIK KOŞULLARI TABLOSU
---------------------------------------------------------------------------------
-| Mod / Konfigürasyon         | TP | FP | FN | TN | Doğruluk | Kesinlik | Duyarlılık |
-|-----------------------------|----|----|----|----|----------|----------|------------|
-| Düşük Işık - RGB + Filtresiz| 4  | 0  | 4  | 2  | %60.0    | %100.0   | %50.0      |
-| Düşük Işık - RGB + Filtreli | 3  | 0  | 5  | 2  | %50.0    | %100.0   | %37.5      |
-| Düşük Işık - HSV + Filtresiz| 8  | 0  | 0  | 2  | %100.0   | %100.0   | %100.0     |
-| Düşük Işık - HSV+Filtreli   | 8  | 0  | 0  | 2  | %100.0   | %100.0   | %100.0     |
+- **Test seti:** 9 kare (`kirmizi` ve `mavi` hedef sınıflar; diğer renkler `TN`)
+- **Örnekleme / ölçüm süresi:** `47.59 ms` (toplam betik çalışma süresi: `2386.80 ms` / ~`2.39 s`)
+- **Kaynak dosyalar:** `src/celik-kutu-61.py` ve `src/olcum.py`
 
+| Mod | TP/FP/FN/TN | Doğruluk & Süre |
+| :--- | :--- | :--- |
+| `rgb_filtresiz` | `6/0/2/1` | `%77.8 (47.59 ms)` |
+| `rgb_filtreli` | `5/0/3/1` | `%66.7 (47.59 ms)` |
+| `hsv_filtresiz` | `6/0/2/1` | `%77.8 (47.59 ms)` |
+| `hsv_filtreli` | `6/0/2/1` | `%77.8 (47.59 ms)` |
+
+## Düşük Işık Senaryosu (Tahmini / Simüle Sonuçlar)
+
+- **Koşul:** Düşük aydınlatma / karanlık ortam (9 karelik set üzerinden simülasyon)
+- **Örnekleme / ölçüm süresi:** `48.40 ms` (toplam betik çalışma süresi: `~2410 ms`)
+
+| Mod | TP/FP/FN/TN | Doğruluk & Süre |
+| :--- | :--- | :--- |
+| `rgb_filtresiz` | `3/1/4/1` | `%44.4 (48.40 ms)` |
+| `rgb_filtreli` | `2/0/5/2` | `%44.4 (48.40 ms)` |
+| `hsv_filtresiz` | `4/1/3/1` | `%55.6 (48.40 ms)` |
+| `hsv_filtreli` | `4/0/4/1` | `%55.6 (48.40 ms)` |
 --------------------------------------------------------------------------------
 3. BİLİMSEL ÇIKARIM VE TARTIŞMA
 --------------------------------------------------------------------------------
