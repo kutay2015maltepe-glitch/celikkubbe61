@@ -1,3 +1,0 @@
-dosya,gercek_sinif,rgb_filtresiz,rgb_filtreli,hsv_filtresiz,hsv_filtreli
-
-kutumavi_1.png,mavi,mavi,mavi,mavi,mavi
