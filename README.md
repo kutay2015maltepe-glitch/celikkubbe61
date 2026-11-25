@@ -2,6 +2,8 @@
 
 Bu depo, çok katmanlı hava savunma mimarisi (Çelik Kubbe) konsepti altında, alçak irtifa tehditlerinin elektro-optik kamera verileriyle **dost (mavi tonları) ve düşman (kırmızı tonları)** olarak sınıflandırılmasını sağlayan saf yazılım tabanlı bilgisayarla görü altsistemine aittir. Proje, donanımdan bağımsız olarak saf Python ve OpenCV üzerinde çalışmaktadır.
 
+* **Başarı Ölçütü:** Doğruluk en az %75.
+
 ---
 
 ## 1. İşleme Hattı (Pipeline) Blok Şeması
@@ -16,6 +18,8 @@ Bu depo, çok katmanlı hava savunma mimarisi (Çelik Kubbe) konsepti altında, 
 [Kontur Analizi & Renk Eşikleme Kararı]
        ↓
 [Sınıflandırma ve Arayüz Çıktısı (Dost / Düşman / FPS)]
+
+* **Renk Uzayları:** RGB ve HSV yapılandırmaları değerlendirilmiştir; CIE-LAB renk uzayı henüz denenmedi.
 
 
 2. Donanım ve Sistem Gereksinimleri
@@ -43,6 +47,10 @@ Düşük Işık / Gölgeli Koşullar
 Etiket Biçimi: Görüntülerdeki hedef nesneler manuel olarak etiketlenmiş (Ground Truth) ve tahmin sonuçları ile karşılaştırılarak Confusion Matrix (Karışıklık Matrisi) metrikleri üretilmiştir.
 
 Veri Depolama: Büyük ölçekli test veri seti harici bulut depolama alanında tutulmakta olup, repoda yalnızca örnek test kareleri yer almaktadır.
+
+## Veri Seti
+
+Bu çalışmada dost (`dost`), düşman (`dusman`) ve hedef bulunmayan (`yok`) sınıfları için kontrollü ışık ve düşük ışık koşullarında eşit sayıda kare toplanmıştır. Çekimler farklı mesafe ve açılarda yapılarak `dosya,gercek_sınıf` sütunlarına sahip `data/etiketler.csv` dosyasıyla manuel olarak etiketlenmiştir. Büyük ham veri seti yerine örnek kareler ve etiket tablosu kullanılmaktadır.
 
 
 
