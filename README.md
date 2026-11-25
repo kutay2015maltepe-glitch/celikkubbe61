@@ -85,7 +85,7 @@ Konsol log çıktısı ve OpenCV GUI penceresi üzerinde bounding box (sınırla
 ÇELİK KUBBE C2 SİMYASUONİ - DENEYSEL PERFORMANS VE DOĞRULAMA RAPORU
 ================================================================================
 
-ÖLÇÜM KRİTERİ VE PARAMETRELER:
+8.ÖLÇÜM KRİTERİ VE PARAMETRELER:
 - Test Karesi (Örneklem): 10 adet test karesi
 - Ortalama İşlem Süresi: 61 ms / kare (Tüm konfigürasyonlar için ortalama)
 - Referans: Manuel etiketleme (Ground Truth)
