@@ -1,0 +1,19 @@
+dosya,gercek_sinif,rgb_filtresiz,rgb_filtreli,hsv_filtresiz,hsv_filtreli
+
+mavi kutu/kutu.png,mavi,mavi,mavi,mavi,mavi
+
+mavi silgi/silgi.png,mavi,mavi,yok,mavi,mavi
+
+siyah cüzdan/cüzdan.png,siyah,yok,yok,yok,yok
+
+kırmızı kablo/kablo.png,kirmizi,kirmizi,kirmizi,kirmizi,kirmizi
+
+mavi oyuncak/oyuncak.png,mavi,yok,yok,yok,yok
+
+kırmızı kitap/kitap.png,kirmizi,kirmizi,kirmizi,kirmizi,kirmizi
+
+mavi kalem/kalem.png,mavi,mavi,mavi,mavi,mavi
+
+mavi para/para.png,mavi,yok,yok,yok,yok
+
+kırmızı yelek/yelek.png,kirmizi,kirmizi,kirmizi,kirmizi,kirmizi
